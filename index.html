@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="description" content="Technical Documentation Page Project for freeCodeCamp" />
+	<meta name="author" content="Joseph A. Sidwa" />
+    <link rel="stylesheet" type="text/css" href="./styles.css" />
+    <title>Arduino Functions: Bits and Bytes</title>
+  </head>
+  <body>
+    <nav id="navbar">
+      <header>
+	    <h1>Arduino Functions</h1>
+		<h3>Bits and Bytes</h3>
+	  </header>
+      <ul>
+        <li>
+          <a class="nav-link" href="#bit">bit</a>
+        </li>
+        <li>
+          <a class="nav-link" href="#bitClear">bitClear</a>
+        </li>
+        <li>
+          <a class="nav-link" href="#bitRead">bitRead</a>
+        </li>
+        <li>
+          <a class="nav-link" href="#bitSet">bitSet</a>
+        </li>
+        <li>
+          <a class="nav-link" href="#bitWrite">bitWrite</a>
+        </li>
+        <li>
+          <a class="nav-link" href="#highByte">highByte</a>
+        </li>
+        <li>
+          <a class="nav-link" href="#lowByte">lowByte</a>
+        </li>
+	  </ul>
+    </nav>
+    <main id="main-doc">
+      <section id="bit" class="main-section">
+        <header>bit</header>
+        <article>
+          <ul>
+            <li>
+			  <h3 class="subsection">Description</h3>
+              <p>Computes the value of the specified bit (bit 0 is 1, bit 1 is 2, bit 2 is 4, etc.).</p>
+            </li>
+            <li>
+			  <h3 class="subsection">Syntax</h3>
+              <p><code>bit(n)</code></p>
+            </li>
+            <li>
+			  <h3 class="subsection">Parameters</h3>
+              <p>n: the bit whose value to compute</p>
+            </li>
+            <li>
+			  <h3 class="subsection">Returns</h3>
+              <p>The value of the bit.</p>
+            </li>
+          </ul>
+        </article>
+      </section>
+	  <hr />
+      <section id="bitClear" class="main-section">
+        <header>bitClear</header>
+        <article>
+          <ul>
+            <li>
+			  <h3 class="subsection">Description</h3>
+              <p>Clears (writes a 0 to) a bit of a numeric variable.</p>
+            </li>
+            <li>
+			  <h3 class="subsection">Syntax</h3>
+              <p><code>bitClear(x, n)</code></p>
+            </li>
+            <li>
+			  <h3 class="subsection">Parameters</h3>
+              <p>x: the numeric variable whose bit to clear.</p>
+              <p>n: which bit to clear, starting at 0 for the least-significant (rightmost) bit.</p>
+            </li>
+            <li>
+			  <h3 class="subsection">Returns</h3>
+              <p>x: the value of the numeric variable after the bit at position n is cleared.</p>
+            </li>
+            <li>
+			  <h3 class="subsection">Example Code</h3>
+              <code>
+			    <pre>void setup() {
+  Serial.begin(9600);
+  while (!Serial) {
+    ; // wait for serial port to connect. Needed for native USB port only
+  }
+
+  int x = 6;
+  int n = 1;
+  Serial.print(bitClear(x, n)); // print the output of bitClear(x,n)
+}
+
+void loop() {
+}</pre>
+              </code>
+            </li>
+          </ul>
+        </article>
+      </section>
+	  <hr />
+      <section id="bitRead" class="main-section">
+        <header>bitRead</header>
+        <article>
+          <ul>
+            <li>
+			  <h3 class="subsection">Description</h3>
+              <p>Reads a bit of a number.</p>
+            </li>
+            <li>
+			  <h3 class="subsection">Syntax</h3>
+              <p><code>bitRead(x, n)</code></p>
+            </li>
+            <li>
+			  <h3 class="subsection">Parameters</h3>
+              <p>x: the number from which to read.</p>
+              <p>n: which bit to read, starting at 0 for the least-significant (rightmost) bit.</p>
+            </li>
+            <li>
+			  <h3 class="subsection">Returns</h3>
+              <p>The value of the bit (0 or 1).</p>
+            </li>
+          </ul>
+        </article>
+      </section>
+	  <hr />
+      <section id="bitSet" class="main-section">
+        <header>bitSet</header>
+        <article>
+          <ul>
+            <li>
+			  <h3 class="subsection">Description</h3>
+              <p>Sets (writes a 1 to) a bit of a numeric variable.</p>
+            </li>
+            <li>
+			  <h3 class="subsection">Syntax</h3>
+              <p><code>bitSet(x, n)</code></p>
+            </li>
+            <li>
+			  <h3 class="subsection">Parameters</h3>
+              <p>x: the numeric variable whose bit to set.</p>
+              <p>n: which bit to set, starting at 0 for the least-significant (rightmost) bit.</p>
+            </li>
+            <li>
+			  <h3 class="subsection">Returns</h3>
+              <p>Nothing</p>
+            </li>
+          </ul>
+        </article>
+      </section>
+	  <hr />
+      <section id="bitWrite" class="main-section">
+        <header>bitWrite</header>
+        <article>
+          <ul>
+            <li>
+			  <h3 class="subsection">Description</h3>
+              <p>Writes a bit of a numeric variable.</p>
+            </li>
+            <li>
+			  <h3 class="subsection">Syntax</h3>
+              <p><code>bitWrite(x, n, b)</code></p>
+            </li>
+            <li>
+			  <h3 class="subsection">Parameters</h3>
+              <p>x: the numeric variable to which to write.</p>
+              <p>n: which bit of the number to write, starting at 0 for the least-significant (rightmost) bit.</p>
+              <p>b: the value to write to the bit (0 or 1).</p>
+            </li>
+            <li>
+			  <h3 class="subsection">Returns</h3>
+              <p>Nothing</p>
+            </li>
+            <li>
+			  <h3 class="subsection">Example Code</h3>
+              <p>Demonstrates the use of bitWrite by printing the value of a variable to the Serial Monitor before and after the use of bitWrite().</p>
+              <code>
+                <pre>void setup() {
+  Serial.begin(9600);
+  while (!Serial) {}  // wait for serial port to connect. Needed for native USB port only
+  byte x = 0b10000000;  // the 0b prefix indicates a binary constant
+  Serial.println(x, BIN); // 10000000
+  bitWrite(x, 0, 1);  // write 1 to the least significant bit of x
+  Serial.println(x, BIN); // 10000001
+}
+
+void loop() {}</pre>
+              </code>
+			</li>
+          </ul>
+        </article>
+      </section>
+	  <hr />
+      <section id="highByte" class="main-section">
+        <header>highByte</header>
+        <article>
+          <ul>
+            <li>
+			  <h3 class="subsection">Description</h3>
+              <p>Extracts the high-order (leftmost) byte of a word (or the second lowest byte of a larger data type).</p>
+            </li>
+            <li>
+			  <h3 class="subsection">Syntax</h3>
+              <p><code>highByte(x)</code></p>
+            </li>
+            <li>
+			  <h3 class="subsection">Parameters</h3>
+              <p>x: a value of any type</p>
+            </li>
+            <li>
+			  <h3 class="subsection">Returns</h3>
+              <p>Data type: byte.</p>
+            </li>
+          </ul>
+        </article>
+      </section>
+	  <hr />
+      <section id="lowByte" class="main-section">
+        <header>lowByte</header>
+        <article>
+          <ul>
+            <li>
+			  <h3 class="subsection">Description</h3>
+              <p>Extracts the low-order (rightmost) byte of a variable (e.g. a word).</p>
+            </li>
+            <li>
+			  <h3 class="subsection">Syntax</h3>
+              <p><code>lowByte(x)</code></p>
+            </li>
+            <li>
+			  <h3 class="subsection">Parameters</h3>
+              <p>x: a value of any type</p>
+            </li>
+            <li>
+			  <h3 class="subsection">Returns</h3>
+              <p>Data type: byte.</p>
+            </li>
+          </ul>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>
